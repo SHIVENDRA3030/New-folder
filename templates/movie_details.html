@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="movie-details">
+        <h1>{{ movie.title }}</h1>
+        <img src="{{ movie.image_url }}" alt="{{ movie.title }}">
+        <p>{{ movie.description }}</p>
+
+        <div class="options">
+            <button onclick="showWatchLinks()">Watch</button>
+            <button onclick="showDownloadLinks()">Download</button>
+        </div>
+
+        <div id="watch-links" style="display:none;">
+            <h3>Watch Links:</h3>
+            <ul>
+                {% for link in movie.watch_links %}
+                    <li><a href="{{ link }}">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="download-links" style="display:none;">
+            <h3>Download Links:</h3>
+            <ul>
+                {% for quality, link in movie.download_links.items() %}
+                    <li><a href="{{ link }}">{{ quality }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showWatchLinks() {
+            document.getElementById('watch-links').style.display = 'block';
+            document.getElementById('download-links').style.display = 'none';
+        }
+
+        function showDownloadLinks() {
+            document.getElementById('download-links').style.display = 'block';
+            document.getElementById('watch-links').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    width: 300px;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.movie-item {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px;
+}
+
+.pagination a {
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    margin: 0 5px;
+}
+
+.movie-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.movie-details img {
+    width: 300px;
+    height: auto;
+}
+
+.options button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    margin: 5px;
+}
+
+#watch-links, #download-links {
+    margin-top: 20px;
+}
+
+#watch-links ul, #download-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#watch-links ul li, #download-links ul li {
+    margin: 5px 0;
+}

@@ -25,7 +25,18 @@ def movie_details(id):
     if movie is None:
         return "Movie not found", 404  # Return a 404 if movie is not found
     
+<<<<<<< Updated upstream
     return render_template('movie_details.html', movie=movie)
+=======
+    return render_template('index.html', movies=movies, page=page)
+@app.route('/movie/<int:movie_id>')
+def movie_details(movie_id):
+    # Fetch movie details and download links from the database
+    movie = get_movie_by_id(movie_id)
+    download_links = get_download_links(movie_id)
+    
+    return render_template('movie_details.html', movie=movie, download_links=download_links)
+>>>>>>> Stashed changes
 
 if __name__ == '__main__':
     app.run(debug=True)
